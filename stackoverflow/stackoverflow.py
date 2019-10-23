@@ -6,7 +6,7 @@ import sys
 
 def getQuestions(query):
     stacklink=r'https://stackoverflow.com'
-    toQuery=lambda x:'/search?q='+'+'.join(x.split())
+    def toQuery(x):'/search?q='+'+'.join(x.split())
 
     # error='unicode error'
 
