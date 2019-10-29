@@ -6,7 +6,8 @@ import sys
 
 def getQuestions(query):
     stacklink=r'https://stackoverflow.com'
-    def toQuery(x):'/search?q='+'+'.join(x.split())
+    def toQuery(x):
+        return '/search?q='+'+'.join(x.split())
 
     # error='unicode error'
 
@@ -22,8 +23,8 @@ def getQuestions(query):
     return questionDict
 
 # query = "python error"
-query = sys.argv[1]
-print(query)
+query = input('Enter query for stackoverflow:\n')
+# print(query)
 
-for questionUrl in getQuestions(query).values():
+for questionUrl in list(getQuestions(query).values())[:5]:
     webbrowser.open_new_tab(questionUrl)
